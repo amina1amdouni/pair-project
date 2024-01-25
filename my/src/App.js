@@ -1,6 +1,7 @@
 // App.js
 
 import React, { useState } from 'react';
+import axios from 'axios';
 import Home from './componenets/Home';
 import AddProduct from './componenets/AddProduct';
 import AllProducts from './componenets/AllProducts';
@@ -13,6 +14,7 @@ function App() {
   const [view, setView] = useState('Home');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cart, setCart] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const changeView = (view) => {
     setView(view);
@@ -33,15 +35,26 @@ function App() {
     setCart(updatedCart);
   };
 
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5090/api/get?name=${searchTerm}`);
+      setView('AllProducts');
+      setSelectedProduct(null);
+      setCart([]);
+      navigateToProductDetail(response.data[0]);
+    } catch (error) {
+      console.error('Error searching for product:', error);
+    }
+  };
+
   return (
     <div className={`App ${view === 'Home' ? 'specific-page' : ''} ${view === 'AllProducts' ? 'all-products-page' : ''} ${view === 'AddProduct' ? 'add-product-page' : ''} ${view === 'ProductDetail' ? 'product-detail-page' : ''} ${view === 'Basket' ? 'basket-page' : ''}`}>
       <nav className="nav">
         <div className="nav-item is-active" onClick={() => setView("Home")}>
         🏠 Home
         </div>
-
         <div className="nav-item" onClick={() => setView("AllProducts")}>
-        📦 AllProducts
+          AllProducts
         </div>
         <div className={`nav-item ${view === 'AddProduct' ? 'is-active' : ''}`} onClick={() => changeView('AddProduct')}>
         🏷️ AddProduct
@@ -50,8 +63,8 @@ function App() {
         🛒 Basket
         </div>
         <div className="nav-item" active-color="black">
-          <input type="text" />
-          <button>🔍</button>
+          <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+          <button onClick={handleSearch}>Search</button>
         </div>
         <div>
           <h1>gastronome</h1>
