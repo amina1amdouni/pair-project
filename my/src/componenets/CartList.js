@@ -1,4 +1,3 @@
-// ShoppingCart.js
 import React from 'react';
 
 function ShoppingCart({ cart, onDeleteItem }) {

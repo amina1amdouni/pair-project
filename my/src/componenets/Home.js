@@ -10,7 +10,7 @@ const Home = ({ changeView }) => {
   return (
     <div className="home-container">
       {/* Add background styling directly to the home-container */}
-      <div style={{ backgroundImage: 'url("https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg")' }}>
+      <div >
         <h1 className="header">Welcome to Your Restaurant</h1>
         <p className="description">Explore our delicious menu and enjoy a wonderful dining experience!</p>
         <button onClick={navigateToAllProducts} className="bn30">See All Products</button>
