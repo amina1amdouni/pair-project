@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import Home from './componenets/Home.js';
 
@@ -9,7 +8,7 @@ import AllProducts from './componenets/AllProducts.js';
 import './App.css';
 
 function App() {
-  const [view, setView] = useState('AllProducts');
+  const [view, setView] = useState('Home');
 
   const changeView = (view) => {
     setView(view);
@@ -18,12 +17,12 @@ function App() {
   return (
     <div className="App">
       <nav className="nav">
-        <div className="nav-item is-active" onClick={() => setView("AllProducts")}>
+        <div className="nav-item is-active" onClick={() => setView("Home")}>
           Home
         </div>
-        
-        <div className="nav-item" onClick={() => setView(" AllProducts")}>
-        AllProducts
+
+        <div className="nav-item" onClick={() => setView("AllProducts")}>  {/* Removed extra space */}
+          AllProducts
         </div>
         <div className="nav-item" onClick={() => setView("AddProduct")}>
           AddProduct
@@ -34,15 +33,13 @@ function App() {
         </div>
         <span className="nav-indicator"></span>
       </nav>
-      {view === "Home" && <Home />}
-      {view === "AllProducts" && <AllProducts />}
-     
-      {view === "AddProduct" && <AddProduct onProductAdded={() => changeView("AllProducts")} />}
+      {view === 'Home' && <Home changeView={changeView} />}
+      {view === 'AllProducts' && <AllProducts />}
+      {view === 'AddProduct' && <AddProduct onProductAdded={() => changeView('AllProducts')} />}
+      <div></div>
       <div></div>
     </div>
   );
 }
 
 export default App;
-
-
