@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import Home from './componenets/Home';
 import AddProduct from './componenets/AddProduct';
@@ -35,10 +34,11 @@ function App() {
   return (
     <div className="App">
       <nav className="nav">
-        <div className={`nav-item ${view === 'Home' ? 'is-active' : ''}`} onClick={() => changeView('Home')}>
+        <div className="nav-item is-active" onClick={() => setView("Home")}>
           Home
         </div>
-        <div className={`nav-item ${view === 'AllProducts' ? 'is-active' : ''}`} onClick={() => changeView('AllProducts')}>
+
+        <div className="nav-item" onClick={() => setView("AllProducts")}>  {/* Removed extra space */}
           AllProducts
         </div>
         <div className={`nav-item ${view === 'AddProduct' ? 'is-active' : ''}`} onClick={() => changeView('AddProduct')}>
@@ -56,7 +56,7 @@ function App() {
         </div>
         <span className="nav-indicator"></span>
       </nav>
-      {view === 'Home' && <Home />}
+      {view === 'Home' && <Home changeView={changeView}/>}
       {view === 'AllProducts' && <AllProducts navigateToProductDetail={navigateToProductDetail} />}
       {view === 'AddProduct' && <AddProduct onProductAdded={() => changeView('AllProducts')} />}
       {view === 'ProductDetail' && <ProductDetail item={selectedProduct} onAddToCart={handleAddToCart} />}
