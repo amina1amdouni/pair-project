@@ -1,3 +1,5 @@
+// App.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import Home from './componenets/Home';
@@ -46,26 +48,26 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App ${view === 'Home' ? 'specific-page' : ''} ${view === 'AllProducts' ? 'all-products-page' : ''} ${view === 'AddProduct' ? 'add-product-page' : ''} ${view === 'ProductDetail' ? 'product-detail-page' : ''} ${view === 'Basket' ? 'basket-page' : ''}`}>
       <nav className="nav">
         <div className="nav-item is-active" onClick={() => setView("Home")}>
-          Home
+        🏠 Home
         </div>
         <div className="nav-item" onClick={() => setView("AllProducts")}>
           AllProducts
         </div>
         <div className={`nav-item ${view === 'AddProduct' ? 'is-active' : ''}`} onClick={() => changeView('AddProduct')}>
-          AddProduct
+        🏷️ AddProduct
         </div>
         <div className={`nav-item ${view === 'Basket' ? 'is-active' : ''}`} onClick={() => changeView('Basket')}>
-          Basket
+        🛒 Basket
         </div>
         <div className="nav-item" active-color="black">
           <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
           <button onClick={handleSearch}>Search</button>
         </div>
         <div>
-          <h1>Your Food Website</h1>
+          <h1>gastronome</h1>
         </div>
         <span className="nav-indicator"></span>
       </nav>

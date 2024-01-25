@@ -36,7 +36,7 @@ function ProductDetail({ item, onAddToCart }) {
           onChange={() => setExtraCheese(!extraCheese)}
         />
       </label>
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      <button onClick={handleAddToCart}className="bn632-hover bn23">Add to Cart</button>
     </div>
   );
 }
