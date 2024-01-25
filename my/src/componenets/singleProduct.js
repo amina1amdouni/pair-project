@@ -1,4 +1,3 @@
-// ProductDetail.js
 import React, { useState } from 'react';
 
 function ProductDetail({ item, onAddToCart }) {
