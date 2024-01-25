@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Item from './Item';
-import ProductDetail from './singleProduct';
-// import ShoppingCart from './CartList'; // Removed ShoppingCart import
-import '../App.css';
 
 function AllProducts({ navigateToProductDetail }) {
   const [data, setData] = useState([]);
   const [editItemId, setEditItemId] = useState(null);
-  // const [cart, setCart] = useState([]); // Removed cart state
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,12 +44,24 @@ function AllProducts({ navigateToProductDetail }) {
     setEditItemId(null);
   };
 
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5090/api/get?name=${searchTerm}`);
+      setData(response.data);
+    } catch (error) {
+      console.error('Error searching for product:', error);
+    }
+  };
+
   return (
     <div className="all-accessories-container">
+     
+      
       <ul className="item-list">
         {data.map((item) => (
           <div key={item.id} className="item-container">
             <Item item={item} />
+            
             {editItemId === item.id ? (
               <div>
                 <input type="text" value={item.name} onChange={() => {}} placeholder="Name" required />
@@ -62,6 +71,7 @@ function AllProducts({ navigateToProductDetail }) {
                 <button onClick={() => updateReview(item.id, { name: item.name, description: item.description, price: item.price, image: item.image })}>Save</button>
                 <button onClick={() => {}}>Cancel</button>
               </div>
+             
             ) : (
               <div>
                 <button onClick={() => navigateToProductDetail(item)}>View Details</button>
@@ -72,7 +82,6 @@ function AllProducts({ navigateToProductDetail }) {
           </div>
         ))}
       </ul>
-      
     </div>
   );
 }
