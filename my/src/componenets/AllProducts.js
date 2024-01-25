@@ -1,14 +1,14 @@
+// AllProducts.jsx
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Item from './Item';
 import ProductDetail from './singleProduct';
-// import ShoppingCart from './CartList'; // Removed ShoppingCart import
 import '../App.css';
 
 function AllProducts({ navigateToProductDetail }) {
   const [data, setData] = useState([]);
   const [editItemId, setEditItemId] = useState(null);
-  // const [cart, setCart] = useState([]); // Removed cart state
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +51,7 @@ function AllProducts({ navigateToProductDetail }) {
     <div className="all-accessories-container">
       <ul className="item-list">
         {data.map((item) => (
-          <div key={item.id} className="item-container">
+          <div key={item.id} className={`item-container product-item-${item.id}`}>
             <Item item={item} />
             {editItemId === item.id ? (
               <div>
@@ -64,15 +64,20 @@ function AllProducts({ navigateToProductDetail }) {
               </div>
             ) : (
               <div>
-                <button onClick={() => navigateToProductDetail(item)}>View Details</button>
-                <button onClick={() => startEdit(item.id)}>Edit</button>
-                <button onClick={() => deleteReview(item.id)}>Delete</button>
+              <button onClick={() => navigateToProductDetail(item)} className="bn31">
+                  <span className="bn31span">View Details</span>
+                </button>
+                <button onClick={() => startEdit(item.id)} className="bn632-hover bn25">
+                  Edit
+                </button>
+                <button onClick={() => deleteReview(item.id)} className="bn632-hover bn28">
+                  Delete
+                </button>
               </div>
             )}
           </div>
         ))}
       </ul>
-      
     </div>
   );
 }
