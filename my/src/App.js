@@ -54,7 +54,7 @@ function App() {
         🏠 Home
         </div>
         <div className="nav-item" onClick={() => setView("AllProducts")}>
-          AllProducts
+        📦 AllProducts
         </div>
         <div className={`nav-item ${view === 'AddProduct' ? 'is-active' : ''}`} onClick={() => changeView('AddProduct')}>
         🏷️ AddProduct
@@ -64,10 +64,10 @@ function App() {
         </div>
         <div className="nav-item" active-color="black">
           <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-          <button onClick={handleSearch}>Search</button>
+          <button onClick={handleSearch}>🔍</button>
         </div>
         <div>
-          <h1>gastronome</h1>
+          <h1>foody</h1>
         </div>
         <span className="nav-indicator"></span>
       </nav>
