@@ -43,7 +43,7 @@ function AddProduct({ onProductAdded }) {
       <form onSubmit={submitProduct} className="page">
         <div className="field field_v1">
           <label htmlFor="product-name" className="ha-screen-reader">
-            food Name
+            
           </label>
           <input
             id="product-name"
@@ -55,12 +55,12 @@ function AddProduct({ onProductAdded }) {
             required
           />
           <span className="field__label-wrap" aria-hidden="true">
-            <span className="field__label">Product Name</span>
+            <span className="field__label"></span>
           </span>
         </div>
         <div className="field field_v2">
           <label htmlFor="product-description" className="ha-screen-reader">
-            Description
+            
           </label>
           <input
             id="product-description"
@@ -72,12 +72,12 @@ function AddProduct({ onProductAdded }) {
             required
           />
           <span className="field__label-wrap" aria-hidden="true">
-            <span className="field__label">Description</span>
+            <span className="field__label"></span>
           </span>
         </div>
         <div className="field field_v3">
           <label htmlFor="product-price" className="ha-screen-reader">
-            Price
+            
           </label>
           <input
             id="product-price"
@@ -89,12 +89,12 @@ function AddProduct({ onProductAdded }) {
             required
           />
           <span className="field__label-wrap" aria-hidden="true">
-            <span className="field__label">Price</span>
+            <span className="field__label"></span>
           </span>
         </div>
         <div className="field field_v3">
           <label htmlFor="product-image" className="ha-screen-reader">
-            Image
+            
           </label>
           <input
             id="product-image"
@@ -106,7 +106,7 @@ function AddProduct({ onProductAdded }) {
             required
           />
           <span className="field__label-wrap" aria-hidden="true">
-            <span className="field__label">Image</span>
+            <span className="field__label"></span>
           </span>
         </div>
 

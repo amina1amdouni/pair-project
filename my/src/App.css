@@ -2,14 +2,16 @@
 
 body.specific-page {
   background: url("https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg") center / cover no-repeat;
-  height: 100vh;
+  height: 1980px;
   margin: 0;
   display: flex;
   justify-content: center;
+  text-align: center;
+  color: #050505;
 }
 
-body.all-products-page {
-  background: url("https://img.freepik.com/free-vector/restaurant-mural-wallpaper_23-2148695092.jpg") center / cover no-repeat;
+body.app.all-products-page {
+  background: url("https://img.freepik.com/free-vector/restaurant-mural-wallpaper_23-2148695092.jpg") ;
 }
 
 body.add-product-page {
@@ -23,7 +25,9 @@ body.product-detail-page {
 body.basket-page {
   background: url("https://www.shutterstock.com/image-vector/seamless-pattern-burgers-fast-food-260nw-1845185635.jpg") center / cover no-repeat;
 }
-
+body.home{
+  background: url("https://www.shutterstock.com/image-vector/seamless-pattern-burgers-fast-food-260nw-1845185635.jpg") center / cover no-repeat;
+}
 
 .nav {
   position: fixed;
@@ -85,7 +89,7 @@ body.basket-page {
 }
 
 .App {
-  padding-top: 279px;
+  padding-top: 140px;
 }
 
 .bn30 {
@@ -315,4 +319,331 @@ img{
     #d9e021
   );
   box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+}
+.buttons {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  text-decoration: none;
+
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+
+  padding: 0.75em 1em;
+
+  color: rgb(5, 5, 5);
+
+  border: 0.15em solid rgb(0, 163, 41);
+  border-radius: calc(0.75em + 0.5em + 0.15em);
+
+  transition: 4s;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: -1.5em;
+
+    z-index: -1;
+
+    width: 200%;
+    aspect-ratio: 1;
+
+    background-color: rgba(blue, 0.25);
+
+    transition: 4s;
+  }
+
+  &:before {
+    left: -80%;
+    transform: translate3d(0, 5em, 0) rotate(-340deg);
+  }
+
+  &:after {
+    right: -80%;
+    transform: translate3d(0, 5em, 0) rotate(390deg);
+  }
+
+  &:hover,
+  &:focus {
+    color: white;
+
+    &:before,
+    &:after {
+      transform: none;
+      background-color: rgba(blue, 0.75);
+    }
+  }
+}
+.cancelButton {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  text-decoration: none;
+
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+
+  padding: 0.75em 1em;
+
+  color: rgb(0, 0, 0);
+
+  border: 0.15em solid rgb(236, 0, 0);
+  border-radius: calc(0.75em + 0.5em + 0.15em);
+
+  transition: 4s;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: -1.5em;
+
+    z-index: -1;
+
+    width: 200%;
+    aspect-ratio: 1;
+
+    background-color: rgba(blue, 0.25);
+
+    transition: 4s;
+  }
+
+  &:before {
+    left: -80%;
+    transform: translate3d(0, 5em, 0) rotate(-340deg);
+  }
+
+  &:after {
+    right: -80%;
+    transform: translate3d(0, 5em, 0) rotate(390deg);
+  }
+
+  &:hover,
+  &:focus {
+    color: white;
+
+    &:before,
+    &:after {
+      transform: none;
+      background-color: rgba(blue, 0.75);
+    }
+  }
+}
+/* AddProduct.css */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  width: 300px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.field__label-wrap {
+  position: relative;
+}
+
+.field__label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background-color: #f4f4f4;
+  padding: 0 5px;
+}
+
+
+
+/* ShoppingCart.css */
+
+.shopping-cart {
+  
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+
+button:hover {
+  background-color: #c0392b;
+}
+
+p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.order-container {
+  margin-top: 20px;
+}
+
+h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button.confirm-order {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button.confirm-order:hover {
+  background-color: #27ae60;
+}
+
+/* ProductDetail.css */
+
+.product-detail {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.product-detail img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+/* AllProducts.css */
+
+.all-accessories-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item-container {
+  margin: 7px;
+  padding: 13px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 263px;
+  text-align: center;
 }
